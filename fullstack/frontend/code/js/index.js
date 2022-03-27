@@ -34,7 +34,7 @@ $(document).ready(function () {
         }
     }
     else if (mycart) {
-        document.title = "My Cart - "+user
+        document.title = "My Cart"
         manageProductAPI({
             API: getcart.API,
             type: getcart.type,

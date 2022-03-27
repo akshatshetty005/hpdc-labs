@@ -1,7 +1,7 @@
 var productsList = [], myCart = [], curProd = {}, cartList = [], checkoutFormData = {}, userOrders = []
 
 $(document).ready(function () {
-    $('.copyright').append('<span>&copy;Archeplay ' + new Date().getFullYear() + '</span>')
+    $('.copyright').append('<span>&copy;RetailPlay ' + new Date().getFullYear() + '</span>')
     // if (sessionStorage.getItem('mycart')) {
     //     myCart = JSON.parse(window.atob(sessionStorage.getItem('mycart')))
     //     $('#my-cart-count').html(myCart.length)
@@ -37,7 +37,7 @@ $(document).ready(function () {
         }
     }
     else if (mycart) {
-        document.title = "My Cart - " + user
+        document.title = "My Cart"
         manageProductAPI({
             API: getcart.API,
             type: getcart.type,
@@ -91,7 +91,7 @@ $(document).ready(function () {
         })
     }
     else {
-        document.title = "Archeplay - Products"
+        document.title = "RetailPlay - Products"
         manageProductAPI({
             API: dumpproduct.API,
             type: dumpproduct.type

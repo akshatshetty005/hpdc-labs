@@ -142,11 +142,11 @@ Resources:
               #!/bin/bash
               sudo yum -y install git curl wget httpd  python python-pip mod_wsgi.x86_64
               sudo pip install flask boto3 ec2-metadata
-              git clone https://github.com/mohanraz81/pythonproject.git
+              git clone https://github.com/sridharatv/python-frontend.git
               sudo echo '200 Ok' |sudo tee /var/www/html/status.html
               sudo echo 'export TableName=producttable' |sudo tee /etc/environment
-              sudo cp -R pythonproject/frontend/code/* /var/www
-              sudo cp pythonproject/frontend/config/archeplay.conf /etc/httpd/conf.d/archeplay.conf
+              sudo cp -R python-frontend/frontend/code/* /var/www
+              sudo cp python-frontend/frontend/config/archeplay.conf /etc/httpd/conf.d/archeplay.conf
               sudo systemctl start httpd
               sudo systemctl enable httpd
 

@@ -8,7 +8,7 @@ curl -L "https://github.com/docker/compose/releases/download/1.27.3/docker-compo
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 yum -y install git
-git clone https://github.com/mohanraz81/archeplay-ecomm-demo.git
+git clone https://github.com/sridharatv/archeplay-ecomm-demo.git
 cd archeplay-ecomm-demo/product
 sed -i "s/REGIONNAME/us-east-1/g" docker-compose.yaml
 sed -i "s/TABLENAME/producttable/g" docker-compose.yaml
