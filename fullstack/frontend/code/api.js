@@ -19,4 +19,4 @@ var getcart = {
     "type": "POST"
 }
 
-var user = "ArcheplayTest123"
+var user = "RetailPlayTest123"
