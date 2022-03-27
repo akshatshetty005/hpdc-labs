@@ -1,7 +1,7 @@
 var productsList = [], myCart = [], curProd = {}, cartList = []
 
 $(document).ready(function () {
-    $('.copyright').append('<span>&copy;Archeplay ' + new Date().getFullYear() + '</span>')
+    $('.copyright').append('<span>&copy;RetailPlay ' + new Date().getFullYear() + '</span>')
     // if (sessionStorage.getItem('mycart')) {
     //     myCart = JSON.parse(window.atob(sessionStorage.getItem('mycart')))
     //     $('#my-cart-count').html(myCart.length)
@@ -45,7 +45,7 @@ $(document).ready(function () {
         })
     }
     else {
-        document.title = "Archeplay - Products"
+        document.title = "RetailPlay - Products"
         manageProductAPI({
             API: dumpproduct.API,
             type: dumpproduct.type
