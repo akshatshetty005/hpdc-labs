@@ -45,7 +45,7 @@ Resources:
       DBInstanceClass: db.t3.micro
       AllocatedStorage: 20
       Engine: MySQL
-      EngineVersion: 8.0.16
+      EngineVersion: 8.0.31
       MasterUsername: admin
       MasterUserPassword: admin123
       MultiAZ: true
