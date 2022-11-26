@@ -1,21 +1,21 @@
 var dumpproduct = {
-    "API": "https://PRODUCTAPIENDPOINT/api/v1.0/dumpproduct",
+    "API": "http://loadbalancer-1389723745.us-east-1.elb.amazonaws.com/api/v1.0/dumpproduct",
     "type": "GET"
 }
 var getallproduct = {
-    "API": "https://PRODUCTAPIENDPOINT/api/v1.0/getallproduct",
+    "API": "http://loadbalancer-1389723745.us-east-1.elb.amazonaws.com/api/v1.0/getallproduct",
     "type": "GET"
 }
 var getproductbyid = {
-    "API": "https://PRODUCTAPIENDPOINT/api/v1.0/getproductbyid",
+    "API": "http://loadbalancer-1389723745.us-east-1.elb.amazonaws.com/api/v1.0/getproductbyid",
     "type": "POST"
 }
 var addtocart = {
-    "API": "https://CARTAPIENDPOINT/api/v1.0/addtocart",
+    "API": "http://ad5ede698b6844c4a8d727b8deb5c625-181456002.us-east-1.elb.amazonaws.com/api/v1.0/addtocart",
     "type": "POST"
 }
 var getcart = {
-    "API": "https://CARTAPIENDPOINT/api/v1.0/getcart",
+    "API": "http://ad5ede698b6844c4a8d727b8deb5c625-181456002.us-east-1.elb.amazonaws.com/api/v1.0/getcart",
     "type": "POST"
 }
 
