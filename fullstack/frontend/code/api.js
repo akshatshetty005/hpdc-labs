@@ -19,4 +19,20 @@ var getcart = {
     "type": "POST"
 }
 
+var checkoutAPI = {
+    "API": "https://x7u5p31vm4.execute-api.us-east-1.amazonaws.com/api/checkout",
+    "type": "POST"
+}
+
+var confirmOrder = {
+    "API": "https://checkout.devloc.archeplay.com/api/v1.0/confirmorder",
+    "type": "POST"
+}
+
+var getOrder = {
+    "API": "https://checkout.devloc.archeplay.com/api/v1.0/getorder",
+    "type": "POST"
+}
+
+
 var user = "ArcheplayTest123"
