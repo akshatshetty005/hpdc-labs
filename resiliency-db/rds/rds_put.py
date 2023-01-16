@@ -56,7 +56,7 @@ def generate_fake_data():
 
 def lambda_handler(event, context):
     """
-    This function fetches content from MySQL RDS instance
+    This function inserts employee records tp MySQL RDS instance
     """
    
     item_count = 0
