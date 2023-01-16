@@ -7,7 +7,7 @@ from faker import Faker
 
 #rds settings
 
-rds_host  = "resili.cxjrgdqlrpdp.us-east-1.rds.amazonaws.com"
+rds_host  = "database-1.cqbek8ozzi2q.us-east-1.rds.amazonaws.com"
 name = rds_config.db_username
 password = rds_config.db_password
 db_name = rds_config.db_name
@@ -31,7 +31,7 @@ def generate_fake_data():
     f_data = {}
     rec_d = []
     ret_data = {}
-    for cou in range (10):
+    for cou in range (100):
         mfaker = Faker()
         name = mfaker.name()
         location = mfaker.city()
@@ -76,18 +76,18 @@ def lambda_handler(event, context):
             
             cur.execute(sql_cmd)
             conn.commit()
-            cur.execute("select * from EmpDB1")
+            #cur.execute("select * from EmpDB1")
 
             for row in cur:
                 item_count += 1
                 logger.info(row)
                 #print(row)
-            conn.commit()
+            #conn.commit()
 
     return "Added %d items from RDS MySQL table" %(item_count)
 
 
 if __name__ == "__main__" :
     inp_data = generate_fake_data()
-    print (json.dumps(inp_data, indent=2))
+    #print (json.dumps(inp_data, indent=2))
     lambda_handler(inp_data, 1)
