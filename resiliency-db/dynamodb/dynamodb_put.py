@@ -49,7 +49,7 @@ def generate_fake_data():
 
 def lambda_handler(event, context):
     """
-    This function fetches content from MySQL RDS instance
+    This function inserts items to DynamoDB table
     """
    
     item_count = 0
