@@ -6,7 +6,8 @@ import boto3
 from faker import Faker
 
 
-tabl_name= "employee"
+tabl_name = "employee"
+p_after = 3600
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
@@ -35,6 +36,8 @@ def generate_fake_data():
         f_data["Phone"] = mfaker.phone_number()
         f_data["Designation"] = mfaker.job()
         f_data["Timestamp"] = datetime.datetime.now().isoformat()
+        utc_time = datetime.datetime.strptime(f_data["Timestamp"], "%Y-%m-%dT%H:%M:%S.%f")
+        f_data["PurgeAfter"] = int((utc_time - datetime.datetime(1970, 1, 1)).total_seconds()) + p_after
 
         #print (f_data)
         rec_d.append(f_data.copy())
@@ -61,7 +64,8 @@ def lambda_handler(event, context):
         p=rec["Phone"]
         d=rec["Designation"]
         t=rec["Timestamp"]
-
+        g=str(rec["PurgeAfter"])
+        
         ret = dyn_client.put_item(
                 TableName=tabl_name,
                 Item = {
@@ -70,7 +74,8 @@ def lambda_handler(event, context):
                         "Location" : {"S" : l},
                         "Phone" : {"S" : p},
                         "Designation" : {"S" : d},
-                        "Timestamp" : {"S" : t}
+                        "Timestamp" : {"S" : t},
+                        "PurgeAfter" : {"N" : g}
                     }
                 )
 

@@ -1,9 +1,1 @@
-vpcid: "vpc-071ecdeddebc88662"
-publicsn1: "subnet-0ebceec75a4a4b2e4"
-publicsn2: "subnet-0eef45320210321d2"
-privatesn1: "subnet-0afec069fe2b8e932"
-privatesn2: "subnet-077c79ee7a7f017b4"
-instanceid: 'i-0089238a63ca71dee'
-instancesg: 'sg-0a04226a873495812'
-lbdns: 'loadbalancer-60913064.us-east-1.elb.amazonaws.com'
-targetgroup: 'arn:aws:elasticloadbalancing:us-east-1:979082889500:targetgroup/ecommtg/c1bb505a1feee165'
+image_id: "ami-0bff8ca23ec03d5fc"

@@ -19,7 +19,6 @@
         Name: ecomm-ami-1.0
       state: present
     register: amiout
-    
   - debug:
       var: amiout
   - name: Deploy Autoscaling and ALb
@@ -37,5 +36,3 @@
         Ami: "{{amiout.image_id}}"
         targetgroup: "{{targetgroup}}"
         instancesg: "{{instancesg}}"
-         
-  

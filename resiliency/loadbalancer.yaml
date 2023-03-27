@@ -45,6 +45,12 @@ Parameters:
     Description: Select Unhealthy Threshold Count for LoadBalancer
     Type: Number
     Default: 2
+
+  LoadBalancerMatcher:
+    Description: The HTTP Response code for successful health check
+    Type: String
+    Default: 200-302
+
   TargetGroupName:
     Description: Name of LoadBalancer TargetGroup
     Type: String

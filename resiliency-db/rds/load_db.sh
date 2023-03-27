@@ -1,6 +1,6 @@
 #!/bin/bash
 
-scr_name="python rds_put.py"
+scr_name="python3 rds_put.py"
 
 while $true
 do

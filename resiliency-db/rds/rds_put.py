@@ -7,7 +7,7 @@ from faker import Faker
 
 #rds settings
 
-rds_host  = "database-1.cqbek8ozzi2q.us-east-1.rds.amazonaws.com"
+rds_host  = "hpdcdb.cvzyivju1ucs.us-east-1.rds.amazonaws.com"
 name = rds_config.db_username
 password = rds_config.db_password
 db_name = rds_config.db_name

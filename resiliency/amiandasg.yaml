@@ -2,6 +2,30 @@
 - name: deploy the hpdc lab
   hosts: localhost
   tasks:
+  - name: Stop ami instance
+    ec2:
+      region: "us-east-1"
+      instance_ids: 
+        - "{{instanceid}}"
+      state: stopped
+      wait: yes
+  - name: Basic AMI Creation
+    ec2_ami:
+      region: "us-east-1"
+      state: "present"
+      instance_id: "{{instanceid}}"
+      wait: yes
+      name: ecomm-ami-1.0
+      tags:
+        Name: ecomm-ami-1.0
+    register: amiout
+  - debug:
+      var: amiout
+  - copy:
+      content: |
+        image_id: "{{amiout.image_id}}"
+      dest: amiserverout.yaml
+       
   - name: Deploy Autoscaling and ALb
     cloudformation:
       stack_name: "autoscaling"
@@ -14,8 +38,6 @@
         PrivateSubnet1ID: "{{privatesn1}}"
         PrivateSubnet2ID: "{{privatesn2}}"
         KeyName: ecommkey
-        Ami: "ami-0543b5911f8fcb664"
+        Ami: "{{amiout.image_id}}"
         targetgroup: "{{targetgroup}}"
         instancesg: "{{instancesg}}"
-         
-  
