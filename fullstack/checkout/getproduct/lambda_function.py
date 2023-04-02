@@ -29,7 +29,7 @@ def lambda_handler(event, context):
       response=json.loads(json.dumps(response,cls=DecimalEncoder))
       successmessage={
           "status": 200,
-          "statusmessage": "Added Items", 
+          "statusmessage": "Retrieving Items", 
           "response": response
       }
       return(successmessage)
