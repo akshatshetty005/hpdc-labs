@@ -1,0 +1,10 @@
+Resources:
+  APSWorkspace:
+    Type: AWS::APS::Workspace
+    Properties:
+      Alias: observability-workshop
+      Tags:
+      - Key: env
+        Value: prod
+      - Key: app
+        Value: petsite
