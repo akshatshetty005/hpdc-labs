@@ -101,7 +101,7 @@
       var: amifind
 
   - name: Stop EC2 instance for AMI creation
-    ec2:
+    ec2_ami:
       region: "us-east-1"
       instance_ids: 
         - '{{amiinstanceout.stack_outputs.EC2InstanceId}}'
