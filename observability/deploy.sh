@@ -67,7 +67,7 @@ eksctl create iamidentitymapping --cluster PetSite --region=us-east-1 --arn ${US
 
 
 # Deploy the application
-cdk deploy Applications --require-approval never
+cdk deploy --no-rollback Applications --require-approval never
 
 # Update Kubeconfig
 aws eks update-kubeconfig --name PetSite --region $AWS_REGION            
