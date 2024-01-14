@@ -1,8 +1,6 @@
 	#!/bin/bash
-	AWS_REGION="us-east-1"
-	export $AWS_REGION
-
- 
+	export AWS_REGION="us-east-1"
+	 
 	eksctl create iamserviceaccount \
 	--name amp-iamproxy-ingest-role \
 	--namespace prometheus \
