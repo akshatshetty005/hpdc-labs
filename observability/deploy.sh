@@ -15,7 +15,7 @@ echo "export USER_ARN=${USER_ARN}" | tee -a ~/.bash_profile
 rm -vf ${HOME}/.aws/credentials
 
 # Install the JQ package
-sudo snap install jq
+#sudo snap install jq
 
 
 # Install Tools
@@ -46,11 +46,20 @@ echo  "Ignore if there are warnings about vulnerabilities "
 
 
 # Deploy stack
-EKS_ADMIN_ARN=$(../../getrole.sh)
+EKS_ADMIN_ARN=$(/root/environment/hpdc-labs/observability/one-observability-demo/PetAdoptions/getrole.sh)
 
 echo -e "\nRole \"${EKS_ADMIN_ARN}\" will be part of system\:masters group\n" 
 
 if [ -z $CONSOLE_ROLE_ARN ]; then echo -e "\nEKS Console access will be restricted\n"; else echo -e "\nRole \"${CONSOLE_ROLE_ARN}\" will have access to EKS Console\n"; fi
+
+while true; do
+    read -p "Do you wish to install this program? " yn
+    case $yn in
+        [Yy]* ) make install; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
 # Deploy both EKSCTL and KUBECTL
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
